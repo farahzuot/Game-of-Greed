@@ -2,6 +2,13 @@ from collections import Counter
 import random
 
 class GameLogic:
+    @staticmethod
+    def roll_dice(number_of_dice):
+        result = []
+        for die in range(number_of_dice):
+            result.append(random.randint(1,6))
+        return tuple(result)
+
 
     @staticmethod
     def calculate_score(tup):
@@ -49,3 +56,14 @@ class GameLogic:
         return score
 
 
+class Banker:
+    def __init__(self):
+        self.shelved=0
+        self.balance=0
+    def shelf(self,value):
+        self.shelved = value
+    def bank(self):
+        self.balance += self.shelved
+        self.shelved =0
+    def clear_shelf(self):
+        self.shelved =0
