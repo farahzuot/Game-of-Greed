@@ -17,7 +17,6 @@ class GameLogic:
         true1 = True
         true2 = True
         true3 = True
-        true4 = True
 
         for i in tup:
             result.append(i)
