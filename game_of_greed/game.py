@@ -82,6 +82,8 @@ class Game:
                     curr = tuple(v)
                     for i in curr:
                         remaining_dice -=1
+              
+
 
                     player1.shelf(GameLogic.calculate_score(curr))
 
@@ -106,9 +108,12 @@ class Game:
                         past_roll_shelf =0
                         player1.bank()
                         score += player1.balance
+                       
                         print(f'You banked {player1.balance} points in round {round}')
                         round +=1
                         print(f'Total score is {score} points')
+                        if score >= 10000:
+                            break
                         remaining_dice = 6
                         player1.balance =0
                         print(f'Starting round {round}')
